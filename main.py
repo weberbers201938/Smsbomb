@@ -513,5 +513,9 @@ def sms_bomb():
     return jsonify({'message': 'Bombing started!'})
 
 
-if __name__ == "__main__":
-    app.run(debug=False, port=5000)
+def run():
+    app.run(host='0.0.0.0', port=7210)
+
+if __name__ == '__main__':
+    t = Thread(target=run)
+    t.start()
